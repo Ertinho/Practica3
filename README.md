@@ -4,6 +4,9 @@
 ## IMPORTANTE
 Debe tener previamente instalado composer y PHP >= 8.1.12 v para evitar futuros errores u problemas, una vez haya clonado el proyecto.
 
+Una vez clonado el repositorio, crear una base de datos en mysql.
+En la raíz del proyecto de Back-End ejecutar los siguientes comandos.
+
 ## Instalación
 
 Ejecuta el siguiente comando para poder instalar composer en el proyecto.
@@ -18,7 +21,7 @@ Este comando establecera la APP_KEY en nuestro archivo .env
 ```bash
 php artisan key:generate
 ```
-Cambiamos los siguientes parámetros:
+Cambiamos los siguientes parámetros en el .env con las variables de entorno de la base de datos:
 ```bash
 DB_PORT = Depende del puerto asigando por usted en la configuración de su base de datos(default: 3306)
 DB_DATABASE = Aqui va el nombre de la base de datos creada en nuestro administrador de base de datos preferido.
@@ -44,26 +47,28 @@ php artisan serve
 
 # Frontend
 
->**Note**: Make sure you have completed the [React Native - Environment Setup](https://reactnative.dev/docs/environment-setup) instructions till "Creating a new application" step, before proceeding.
+>**Nota**: Asegúrate de que completaste la guía de instalación [React Native - Environment Setup](https://reactnative.dev/docs/environment-setup) hasta el apartado "Creating a new application", antes de proceder.
 
-## Step 1: Instal to Node Package Manager
+## Step 1: Instalando  Node
+
+En la raiz del proyecto del Front-End abre una nueva terminal y ejecuta el siguiente comando. 
 
 ```bash
 # using npm
 npm install
 ```
 
-## Step 2: Start your Application (CLI)
+## Step 2: Inicia la aplicación 
 
-Let Metro Bundler run in its _own_ terminal. Open a _new_ terminal from the _root_ of your React Native project. Run the following command to start your _Android_ or _iOS_ app:
+Ejecuta los siguientes comandos para empezar tu aplicación _Android_ o _iOS_ :
 
-### For Android
+### Android
 
 ```bash
 # using npm
 npx react-native run android
 ```
-### For iOS
+### iOS
 
 ```bash
 # using npm
@@ -74,15 +79,6 @@ npm run ios
 yarn ios
 ```
 
-If everything is set up _correctly_, you should see your new app running in your _Android Emulator_ or _iOS Simulator_ shortly provided you have set up your emulator/simulator correctly.
+Si todo esta _bien_ configurado, deberías ver tu aplicación ejecutandose en tu  _emulador android_ o _emulador iOS_ .
 
-This is one way to run your app — you can also run it directly from within Android Studio and Xcode respectively.
-
-## Step 3: Modifying your App
-
-Now that you have successfully run the app, let's modify it.
-
-1. Open `App.tsx` in your text editor of choice and edit some lines.
-2. For **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Developer Menu** (<kbd>Ctrl</kbd> + <kbd>M</kbd> (on Window and Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (on macOS)) to see your changes!
-
-   For **iOS**: Hit <kbd>Cmd ⌘</kbd> + <kbd>R</kbd> in your iOS Simulator to reload the app and see your changes!
+También puedes ejecutar tu aplicación en un dispositivo físico siguiendo las intrucciones en su respectiva documentación. (https://reactnative.dev/docs/running-on-device)
