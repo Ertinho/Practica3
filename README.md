@@ -17,22 +17,22 @@ Debemos copiar el archivo .env para poder establecer la conexión con nuestra ba
 ```bash
 copy .env.example .env
 ```
-Este comando establecera la APP_KEY en nuestro archivo .env
+Este comando establecerá la APP_KEY en nuestro archivo .env
 ```bash
 php artisan key:generate
 ```
 Cambiamos los siguientes parámetros en el .env con las variables de entorno de la base de datos:
 ```bash
-DB_PORT = Depende del puerto asigando por usted en la configuración de su base de datos(default: 3306)
-DB_DATABASE = Aqui va el nombre de la base de datos creada en nuestro administrador de base de datos preferido.
+DB_PORT = Depende del puerto asignado por usted en la configuración de su base de datos(default: 3306)
+DB_DATABASE = Aquí va el nombre de la base de datos creada en nuestro administrador de base de datos preferido.
 DB_USERNAME = root
-DB_PASSWORD = Es la contraseña que nosotros asignamos en la instalación, en caso de utilizar Xampp, Laragon, etc.. Este campo se debe dejar vacio.
+DB_PASSWORD = Es la contraseña que nosotros asignamos en la instalación, en caso de utilizar Xampp, Laragon, etc... Este campo se debe dejar vacío.
 ```
-Este comando ejecutara las migraciones del proyecto y una vez creada las tablas en la base de datos, dara paso a ejecutar los seeders que forman parte del estado predeterminado del sistema.
+Este comando ejecutara las migraciones del proyecto y una vez creada las tablas en la base de datos, dará paso a ejecutar los seeders que forman parte del estado predeterminado del sistema.
 ```bash
 php artisan migrate --seed
 ```
-En caso de que no funcione la migración, actualize el archivo .env con los siguientes comandos.
+En caso de que no funcione la migración, actualiza el archivo .env con los siguientes comandos.
 ```bash
 php artisan cache:clear
 php artisan route:clear
@@ -51,7 +51,7 @@ php artisan serve
 
 ## Step 1: Instalando  Node
 
-En la raiz del proyecto del Front-End abre una nueva terminal y ejecuta el siguiente comando. 
+En la raíz del proyecto del Front-End abre una nueva terminal y ejecuta el siguiente comando. 
 
 ```bash
 # using npm
@@ -79,6 +79,6 @@ npm run ios
 yarn ios
 ```
 
-Si todo esta _bien_ configurado, deberías ver tu aplicación ejecutandose en tu  _emulador android_ o _emulador iOS_ .
+Si todo esta _bien_ configurado, deberías ver tu aplicación ejecutándose en tu  _emulador android_ o _emulador iOS_ .
 
-También puedes ejecutar tu aplicación en un dispositivo físico siguiendo las intrucciones en su respectiva documentación. (https://reactnative.dev/docs/running-on-device)
+También puedes ejecutar tu aplicación en un dispositivo físico siguiendo las instrucciones en su respectiva documentación. (https://reactnative.dev/docs/running-on-device)
