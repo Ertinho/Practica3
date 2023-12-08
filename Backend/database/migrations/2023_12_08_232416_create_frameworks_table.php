@@ -13,6 +13,10 @@ return new class extends Migration
     {
         Schema::create('frameworks', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
+            $table->string('level');
+            $table->date('year');
+            $table->foreignId('profile_id')->constrained('profiles');
             $table->timestamps();
         });
     }
@@ -22,6 +26,9 @@ return new class extends Migration
      */
     public function down(): void
     {
+        Schema::table('frameworks', function (Blueprint $table) {
+            $table->dropForeign(['profile_id']);
+        });
         Schema::dropIfExists('frameworks');
     }
 };

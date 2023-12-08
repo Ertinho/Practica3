@@ -18,4 +18,24 @@ class Profile extends Model
         'summary',
     ];
 
+    /*
+     * Get the hobbies for the profile.
+     *
+     *
+     */
+    public function hobbies()
+    {
+        return $this->hasMany(Hobbies::class);
+    }
+
+    /*
+     * Get the frameworks for the profile.
+     *
+     *
+     */
+    public function frameworks()
+    {
+        return $this->hasMany(Framework::class);
+    }
+
 }
