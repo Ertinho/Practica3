@@ -11,7 +11,7 @@ class Hobbies extends Model
     protected $fillable = [
         'name',
         'description',
-        'profile_id'
+
     ];
 
     /*

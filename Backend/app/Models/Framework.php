@@ -13,7 +13,7 @@ class Framework extends Model
         'name',
         'level',
         'year',
-        'profile_id'
+
     ];
 
     /*
