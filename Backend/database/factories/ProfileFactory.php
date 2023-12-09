@@ -18,12 +18,12 @@ class ProfileFactory extends Factory
     {
         return [
             //
-            'name' => $this->fake->name,
-            'lastname' => $this->fake->lastName,
-            'email' => $this->fake->unique()->safeEmail,
-            'city' => $this->fake->city,
-            'country' => $this->fake->country,
-            'summary' => $this->fake->sentence,
+            'name' => fake()->name(),
+            'lastname' => fake()->lastName(),
+            'email' => fake()->unique()->safeEmail(),
+            'city' => fake()->city(),
+            'country' => fake()->country(),
+            'summary' => fake()->sentence(),
         ];
     }
 }

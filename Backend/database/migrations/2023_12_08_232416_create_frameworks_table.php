@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('level');
-            $table->date('year');
+            $table->year('year');
             $table->foreignId('profile_id')->constrained('profiles');
             $table->timestamps();
         });
