@@ -18,7 +18,7 @@ class ProfileFactory extends Factory
     {
         return [
             //
-            'name' => fake()->name(),
+            'name' => fake()->firstName(),
             'lastname' => fake()->lastName(),
             'email' => fake()->unique()->safeEmail(),
             'city' => fake()->city(),

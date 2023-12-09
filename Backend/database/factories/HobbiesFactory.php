@@ -18,9 +18,8 @@ class HobbiesFactory extends Factory
     {
         return [
             //
-            'name' => fake()->randomElement(['Soccer', 'Basketball', 'Tennis', 'Baseball', 'Football', 'Volleyball', 'Golf', 'Hockey', 'Cricket', 'Rugby', 'Badminton', 'Table Tennis', 'Squash', 'Polo', 'Croquet', 'Lacrosse', 'Water Polo', 'Handball', 'Racquetball', 'Softball', 'Paintball', 'Ice Hockey', 'Curling', 'Bowling', 'Billiards', 'Snooker', 'Darts', 'Chess', 'Bridge', 'Checkers', 'Backgammon', 'Go', 'Mahjong', 'Dominoes', 'Poker', 'Gin Rummy', 'Blackjack', 'Solitaire', 'Spades', 'Hearts', 'Euchre', 'Pinochle', 'Canasta', 'Cribbage', 'Rummikub', 'War', 'Crazy Eights', 'Old Maid', 'Uno', 'Go Fish', 'Bridge', 'Checkers', 'Backgammon', 'Go', 'Mahjong', 'Dominoes', 'Poker', 'Gin Rummy', 'Blackjack', 'Solitaire', 'Spades', 'Hearts', 'Euchre', 'Pinochle', 'Canasta', 'Cribbage', 'Rummikub', 'War', 'Crazy Eights', 'Old Maid', 'Uno', 'Go Fish']),
+            'name' => fake()->randomElement(['Fútbol','Baloncesto','Tenis','Béisbol','Voleibol','Golf','Bádminton','Tenis de mesa','Bolos','Billar','Dardos','Ajedrez','Damas','Mahjong','Dominó','Póker','Blackjack','Solitario','Guerra','Uno','Tenis de mesa','Balonmano','Hockey sobre hielo','Rugby','Ir a pescar']),
             'description' => fake()->sentence(),
-
         ];
     }
 }
