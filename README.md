@@ -54,7 +54,7 @@ php artisan serve
 
 >**Nota**: Asegúrate de que completaste la guía de instalación [React Native - Environment Setup](https://reactnative.dev/docs/environment-setup) hasta el apartado "Creating a new application", antes de proceder.
 
-## Step 1: Instalando  Node
+## Paso 1: Instalando  Node
 
 En la raíz del proyecto del Front-End abre una nueva terminal y ejecuta los siguientes comandos. 
 
@@ -67,7 +67,7 @@ cd Frontend
 npm install
 ```
 
-## Step 2: Inicia la aplicación 
+## Paso 2: Inicia la aplicación 
 
 Ejecuta los siguientes comandos para empezar tu aplicación _Android_ ó _iOS_ :
 
