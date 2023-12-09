@@ -15,10 +15,7 @@ use App\Http\Controllers\ProfileController;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
-});
-
 
 Route::get('profile', [ProfileController::class,'getProfile']);
 
+Route::put('updateProfile', [ProfileController::class,'updateProfile']);

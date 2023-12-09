@@ -19,8 +19,8 @@ class ProfileSeeder extends Seeder
         //
         Profile::factory()
         ->count(1)
-        ->has(Hobbies::factory()->count(rand(1, 4)))
-        ->hasFrameworks(rand(1, 4))
+        ->has(Hobbies::factory()->count(1))
+        ->hasFrameworks(1)
         ->create();
     }
 }
