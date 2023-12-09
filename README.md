@@ -7,6 +7,11 @@ Debe tener previamente instalado composer y PHP >= 8.1.12 v para evitar futuros 
 Una vez clonado el repositorio, crear una base de datos en mysql.
 En la raíz del proyecto de Back-End ejecutar los siguientes comandos.
 
+```bash
+cd Backend
+```
+
+
 ## Instalación
 
 Ejecuta el siguiente comando para poder instalar composer en el proyecto.
@@ -51,7 +56,11 @@ php artisan serve
 
 ## Step 1: Instalando  Node
 
-En la raíz del proyecto del Front-End abre una nueva terminal y ejecuta el siguiente comando. 
+En la raíz del proyecto del Front-End abre una nueva terminal y ejecuta los siguientes comandos. 
+
+```bash
+cd Frontend
+```
 
 ```bash
 # using npm
@@ -60,7 +69,7 @@ npm install
 
 ## Step 2: Inicia la aplicación 
 
-Ejecuta los siguientes comandos para empezar tu aplicación _Android_ o _iOS_ :
+Ejecuta los siguientes comandos para empezar tu aplicación _Android_ ó _iOS_ :
 
 ### Android
 
@@ -79,6 +88,6 @@ npm run ios
 yarn ios
 ```
 
-Si todo esta _bien_ configurado, deberías ver tu aplicación ejecutándose en tu  _emulador android_ o _emulador iOS_ .
+Si todo esta _bien_ configurado, deberías ver tu aplicación ejecutándose en tu  _emulador android_ ó _emulador iOS_ .
 
 También puedes ejecutar tu aplicación en un dispositivo físico siguiendo las instrucciones en su respectiva documentación. (https://reactnative.dev/docs/running-on-device)
