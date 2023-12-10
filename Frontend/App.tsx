@@ -1,118 +1,95 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- */
-
-import React from 'react';
-import type {PropsWithChildren} from 'react';
-import {
+import React, { useEffect, useState } from 'react';
+import { 
   SafeAreaView,
-  ScrollView,
-  StatusBar,
-  StyleSheet,
-  Text,
-  useColorScheme,
-  View,
+  Pressable,
+  View, 
+  Text
 } from 'react-native';
 
-import {
-  Colors,
-  DebugInstructions,
-  Header,
-  LearnMoreLinks,
-  ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';
 
-type SectionProps = PropsWithChildren<{
-  title: string;
-}>;
+import axios from 'axios';
+import {URL} from './src/helpers/index';
+const endpoint = URL;
 
-function Section({children, title}: SectionProps): JSX.Element {
-  const isDarkMode = useColorScheme() === 'dark';
-  return (
-    <View style={styles.sectionContainer}>
-      <Text
-        style={[
-          styles.sectionTitle,
-          {
-            color: isDarkMode ? Colors.white : Colors.black,
-          },
-        ]}>
-        {title}
-      </Text>
-      <Text
-        style={[
-          styles.sectionDescription,
-          {
-            color: isDarkMode ? Colors.light : Colors.dark,
-          },
-        ]}>
-        {children}
-      </Text>
-    </View>
-  );
-}
 
-function App(): JSX.Element {
-  const isDarkMode = useColorScheme() === 'dark';
+const App = () => {
+  //const [profile, setProfile] = useState({});
+  const [name, setName] = useState('');
+  const [lastName, setLastName] = useState('');
+  const [email, setEmail] = useState('');
+  const [city, setCity] = useState('');
+  const [country, setCountry] = useState('');
+  const [frameworks , setFrameworks] = useState([]);
+  const [hobbies , setHobbies] = useState([]);
+  
+  useEffect(() => {
+    getProfile();
+  }, []);
 
-  const backgroundStyle = {
-    backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
+  const getProfile = async () => {
+    const response = await axios
+      .get(`${endpoint}profile`)
+      .then(res => {
+        //setProfile(res.data);
+        setName(res.data.name);
+        setLastName(res.data.lastname);
+        setEmail(res.data.email);
+        setCity(res.data.city);
+        setCountry(res.data.country);
+        setFrameworks(res.data.frameworks);
+        setHobbies(res.data.hobbies);
+      })
+      .catch(error => console.log(error));
   };
 
+  /*
+  const updateProfile = () => {
+    fetch(`${endpoint}updateProfile`, {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        // Your updated profile data here
+      }),
+    })
+    .then(response => response.json())
+    .then(data => setProfile(data))
+    .catch(error => console.error(error));
+  };
+  */
+
   return (
-    <SafeAreaView style={backgroundStyle}>
-      <StatusBar
-        barStyle={isDarkMode ? 'light-content' : 'dark-content'}
-        backgroundColor={backgroundStyle.backgroundColor}
-      />
-      <ScrollView
-        contentInsetAdjustmentBehavior="automatic"
-        style={backgroundStyle}>
-        <Header />
-        <View
-          style={{
-            backgroundColor: isDarkMode ? Colors.black : Colors.white,
-          }}>
-          <Section title="Step One">
-            Edit <Text style={styles.highlight}>App.tsx</Text> to change this
-            screen and then come back to see your edits.
-          </Section>
-          <Section title="See Your Changes">
-            <ReloadInstructions />
-          </Section>
-          <Section title="Debug">
-            <DebugInstructions />
-          </Section>
-          <Section title="Learn More">
-            Read the docs to discover what to do next:
-          </Section>
-          <LearnMoreLinks />
-        </View>
-      </ScrollView>
+    <SafeAreaView>
+      <Text>¡Bienvenido/a !</Text>
+      <Text>Nombre: {name}</Text>
+      <Text>Apellido: {lastName}</Text>
+      <Text>Correo electrónico: {email}</Text>
+      <Text>Ciudad: {city}</Text>
+      <Text>País: {country}</Text>
+
+      <Text>Hobbies:</Text>
+      <Text>
+         {hobbies.map((hobby:{ name: string ; description: string } , index) => (
+          <View key={index}>
+            <Text>Nombre: {hobby.name}</Text>
+            <Text>Descripción: {hobby.description}</Text>
+          </View>
+        ))}
+      </Text>
+      <Text>Frameworks:</Text>
+      <Text>
+         {frameworks.map((framework:{ name: string ; level: string ; year: string} , index) => (
+          <View key={index}>
+            <Text>Nombre: {framework.name}</Text>
+            <Text>Nivel: {framework.level}</Text>
+            <Text>Año: {framework.year}</Text>
+          </View>
+        ))}
+      </Text>
+
     </SafeAreaView>
   );
-}
-
-const styles = StyleSheet.create({
-  sectionContainer: {
-    marginTop: 32,
-    paddingHorizontal: 24,
-  },
-  sectionTitle: {
-    fontSize: 24,
-    fontWeight: '600',
-  },
-  sectionDescription: {
-    marginTop: 8,
-    fontSize: 18,
-    fontWeight: '400',
-  },
-  highlight: {
-    fontWeight: '700',
-  },
-});
+};
 
 export default App;
