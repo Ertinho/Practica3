@@ -45,7 +45,7 @@ php artisan view:clear
 ```
 Ahora procederemos a ejecutar el Sistema Web con los siguientes comandos:
 ```bash
-php artisan serve
+php artisan serve --host=0.0.0.0
 ```
 
 
@@ -87,6 +87,10 @@ npm run ios
 # OR using Yarn
 yarn ios
 ```
+
+
+Verificar ip pública con ipconfig en cmd.
+Cambiar ip pública en index.js de la carpeta de helpers.
 
 Si todo esta _bien_ configurado, deberías ver tu aplicación ejecutándose en tu  _emulador android_ ó _emulador iOS_ .
 
